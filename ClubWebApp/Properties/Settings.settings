@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ClubWebApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="InvoicePrinter" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\RECEPTION-PC\HP Deskjet 1000 J110 series</Value>
+    </Setting>
+    <Setting Name="DefaultPrinter" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\RECEPTION-PC\HP Deskjet 1000 J110 series</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

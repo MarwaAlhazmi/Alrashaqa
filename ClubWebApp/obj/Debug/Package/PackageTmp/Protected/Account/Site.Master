@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ClubWebApp.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="../../Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            font-family: Andalus;
+        }
+        #image
+        {
+            height: 148px;
+            width: 245px;
+        }
+    </style>
+</head>
+<body id="body">
+    <form id="Form1" runat="server">
+
+
+    
+<div id="top">
+	<div id="top_content">
+    <div style="height: 136px;">
+    <img id="image" src="../../Styles/img/FitnessClub.gif" alt="" />
+    </div>
+
+
+	</div>
+</div>
+<div class="menu">
+	<div class="menu_content">
+		<ul class="menulist">
+			<li class="menu_item"><a href="../Default.aspx" class="top">الصفحة الرئيسية</a></li>
+			<li class="menu_item"><a href="../NewMember.aspx" class="top">إضافة ملف</a></li>
+
+			<li class="menu_item"><a href="../Search.aspx" class="top">بحث</a></li>	
+			<li class="menu_item"><a href="../Invoice.aspx" class="top">فواتير</a></li>	
+			<li class="menu_item"></li>
+
+			<li class="menu_item" style="margin-left:412px;" ><a href="index.html" class="top"></a></li>
+			
+               <asp:LoginView ID="LoginView1" runat="server">
+                    <AnonymousTemplate>
+                        الرجاء <a href="../../Login.aspx"> تسجيل الدخول </a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        مرحبا 
+                     <asp:LoginName ID="LoginName1" runat="server" />
+                     <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                    </LoggedInTemplate>
+                    </asp:LoginView>
+               
+		</ul>
+	</div>
+
+</div>
+<div id="content">
+	
+       
+      <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+	
+</div>
+<div id="bottom">
+	<div id="bottom_content">
+
+		
+		
+
+		<div id="copyright"><a href="mailto:alhazmi_m@hotmail.com"> &copy; 2011 Marwa Alhazmi</a>
+		</div>
+	</div>
+</div>
+
+
+    </form>
+</body>
+</html>

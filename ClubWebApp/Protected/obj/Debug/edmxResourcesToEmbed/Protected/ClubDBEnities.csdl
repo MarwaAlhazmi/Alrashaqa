@@ -1,0 +1,895 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClubDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ClubDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BuffetMovs" EntityType="ClubDBModel.BuffetMov" />
+    <EntitySet Name="CashMovs" EntityType="ClubDBModel.CashMov" />
+    <EntitySet Name="Clients" EntityType="ClubDBModel.Client" />
+    <EntitySet Name="Departments" EntityType="ClubDBModel.Department" />
+    <EntitySet Name="Deposits" EntityType="ClubDBModel.Deposit" />
+    <EntitySet Name="Discharges" EntityType="ClubDBModel.Discharge" />
+    <EntitySet Name="Employees" EntityType="ClubDBModel.Employee" />
+    <EntitySet Name="Evaluations" EntityType="ClubDBModel.Evaluation" />
+    <EntitySet Name="ExpensesMovs" EntityType="ClubDBModel.ExpensesMov" />
+    <EntitySet Name="IntSubs" EntityType="ClubDBModel.IntSub" />
+    <EntitySet Name="InvoiceHeaders" EntityType="ClubDBModel.InvoiceHeader" />
+    <EntitySet Name="InvoiceServices" EntityType="ClubDBModel.InvoiceService" />
+    <EntitySet Name="NutSubs" EntityType="ClubDBModel.NutSub" />
+    <EntitySet Name="Services" EntityType="ClubDBModel.Service" />
+    <EntitySet Name="Subscribtions" EntityType="ClubDBModel.Subscribtion" />
+    <EntitySet Name="TReaquests" EntityType="ClubDBModel.TReaquest" />
+    <EntitySet Name="Visits" EntityType="ClubDBModel.Visit" />
+    <EntitySet Name="Withdraws" EntityType="ClubDBModel.Withdraw" />
+    <EntitySet Name="WithTypes" EntityType="ClubDBModel.WithType" />
+    <AssociationSet Name="FK_Discharge_Client" Association="ClubDBModel.FK_Discharge_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Discharge" EntitySet="Discharges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Evaluation_Client" Association="ClubDBModel.FK_Evaluation_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Evaluation" EntitySet="Evaluations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceHeader_Client" Association="ClubDBModel.FK_InvoiceHeader_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="InvoiceHeader" EntitySet="InvoiceHeaders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscribtion_Client" Association="ClubDBModel.FK_Subscribtion_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Subscribtion" EntitySet="Subscribtions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TReaquest_Client" Association="ClubDBModel.FK_TReaquest_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="TReaquest" EntitySet="TReaquests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visit_Client" Association="ClubDBModel.FK_Visit_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Visit" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Service_Service" Association="ClubDBModel.FK_Service_Service">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Service" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Deposit_InvoiceHeader" Association="ClubDBModel.FK_Deposit_InvoiceHeader">
+      <End Role="InvoiceHeader" EntitySet="InvoiceHeaders" />
+      <End Role="Deposit" EntitySet="Deposits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Discharge_Employee" Association="ClubDBModel.FK_Discharge_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Discharge" EntitySet="Discharges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Evaluation_Employee" Association="ClubDBModel.FK_Evaluation_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Evaluation" EntitySet="Evaluations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TReaquest_Employee" Association="ClubDBModel.FK_TReaquest_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="TReaquest" EntitySet="TReaquests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Withdraw_Employee" Association="ClubDBModel.FK_Withdraw_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Withdraw" EntitySet="Withdraws" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IntSub_IntSub" Association="ClubDBModel.FK_IntSub_IntSub">
+      <End Role="Subscribtion" EntitySet="Subscribtions" />
+      <End Role="IntSub" EntitySet="IntSubs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceServices_InvoiceHeader" Association="ClubDBModel.FK_InvoiceServices_InvoiceHeader">
+      <End Role="InvoiceHeader" EntitySet="InvoiceHeaders" />
+      <End Role="InvoiceServices" EntitySet="InvoiceServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceServices_Service" Association="ClubDBModel.FK_InvoiceServices_Service">
+      <End Role="Service" EntitySet="Services" />
+      <End Role="InvoiceServices" EntitySet="InvoiceServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NutSub_Subscribtion" Association="ClubDBModel.FK_NutSub_Subscribtion">
+      <End Role="Subscribtion" EntitySet="Subscribtions" />
+      <End Role="NutSub" EntitySet="NutSubs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscribtion_Service" Association="ClubDBModel.FK_Subscribtion_Service">
+      <End Role="Service" EntitySet="Services" />
+      <End Role="Subscribtion" EntitySet="Subscribtions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visit_Subscribtion" Association="ClubDBModel.FK_Visit_Subscribtion">
+      <End Role="Subscribtion" EntitySet="Subscribtions" />
+      <End Role="Visit" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Withdraw_WithType" Association="ClubDBModel.FK_Withdraw_WithType">
+      <End Role="WithType" EntitySet="WithTypes" />
+      <End Role="Withdraw" EntitySet="Withdraws" />
+    </AssociationSet>
+    <AssociationSet Name="DepDoc" Association="ClubDBModel.DepDoc">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WithType_Department" Association="ClubDBModel.FK_WithType_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="WithType" EntitySet="WithTypes" />
+    </AssociationSet>
+    <EntitySet Name="BankTrans" EntityType="ClubDBModel.BankTran" />
+    <AssociationSet Name="FK_Withdraw_Employee1" Association="ClubDBModel.FK_Withdraw_Employee1">
+      <End Role="BankTran" EntitySet="BankTrans" />
+      <End Role="Withdraw" EntitySet="Withdraws" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BuffetMov">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PreBalance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Balance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Purchase" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Sales" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="MigBalance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CashMov">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="PreBalance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="InvIncome" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="BuffetIncome" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Balance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Expenses" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Bank" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="MigBalance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SecondName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FamilyName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DOB" Type="Int32" />
+    <Property Name="Nationality" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IDNumber" Type="Int64" />
+    <Property Name="Phone" Type="Int64" />
+    <Property Name="Marital" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="RefferedFrom" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="RefferedDate" Type="DateTime" />
+    <Property Name="Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Discharges" Relationship="ClubDBModel.FK_Discharge_Client" FromRole="Client" ToRole="Discharge" />
+    <NavigationProperty Name="Evaluations" Relationship="ClubDBModel.FK_Evaluation_Client" FromRole="Client" ToRole="Evaluation" />
+    <NavigationProperty Name="InvoiceHeaders" Relationship="ClubDBModel.FK_InvoiceHeader_Client" FromRole="Client" ToRole="InvoiceHeader" />
+    <NavigationProperty Name="Subscribtions" Relationship="ClubDBModel.FK_Subscribtion_Client" FromRole="Client" ToRole="Subscribtion" />
+    <NavigationProperty Name="TReaquests" Relationship="ClubDBModel.FK_TReaquest_Client" FromRole="Client" ToRole="TReaquest" />
+    <NavigationProperty Name="Visits" Relationship="ClubDBModel.FK_Visit_Client" FromRole="Client" ToRole="Visit" />
+    <Property Type="String" Name="Gardian" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Twon" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Relative" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepID" />
+    </Key>
+    <Property Name="DepID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Services" Relationship="ClubDBModel.FK_Service_Service" FromRole="Department" ToRole="Service" />
+    <NavigationProperty Name="Employees" Relationship="ClubDBModel.DepDoc" FromRole="Department" ToRole="Employee" />
+    <NavigationProperty Name="WithTypes" Relationship="ClubDBModel.FK_WithType_Department" FromRole="Department" ToRole="WithType" />
+  </EntityType>
+  <EntityType Name="Deposit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvID" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Notes" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="CheckNum" Type="Int64" />
+    <Property Name="Bank" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Employee" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="AmountW" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="FromPerson" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="InvoiceHeader" Relationship="ClubDBModel.FK_Deposit_InvoiceHeader" FromRole="Deposit" ToRole="InvoiceHeader" />
+  </EntityType>
+  <EntityType Name="Discharge">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Diagnosis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="PreReferral" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="InitialSession" Type="DateTime" Nullable="false" />
+    <Property Name="FinalSession" Type="DateTime" Nullable="false" />
+    <Property Name="TotalNSession" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Treatment" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Discharge1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Goals" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="GoalsBool" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Client" Relationship="ClubDBModel.FK_Discharge_Client" FromRole="Discharge" ToRole="Client" />
+    <NavigationProperty Name="Employee" Relationship="ClubDBModel.FK_Discharge_Employee" FromRole="Discharge" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNum" Type="Int64" />
+    <Property Name="Type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Discharges" Relationship="ClubDBModel.FK_Discharge_Employee" FromRole="Employee" ToRole="Discharge" />
+    <NavigationProperty Name="Evaluations" Relationship="ClubDBModel.FK_Evaluation_Employee" FromRole="Employee" ToRole="Evaluation" />
+    <NavigationProperty Name="TReaquests" Relationship="ClubDBModel.FK_TReaquest_Employee" FromRole="Employee" ToRole="TReaquest" />
+    <NavigationProperty Name="Withdraws" Relationship="ClubDBModel.FK_Withdraw_Employee" FromRole="Employee" ToRole="Withdraw" />
+    <NavigationProperty Name="Departments" Relationship="ClubDBModel.DepDoc" FromRole="Employee" ToRole="Department" />
+  </EntityType>
+  <EntityType Name="Evaluation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="Diagnosis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="History" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Objective" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Assessment" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Goals" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Treatment" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="ClubDBModel.FK_Evaluation_Client" FromRole="Evaluation" ToRole="Client" />
+    <NavigationProperty Name="Employee" Relationship="ClubDBModel.FK_Evaluation_Employee" FromRole="Evaluation" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="ExpensesMov">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="PreBalance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PlusBalance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Balance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Expenses" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="MigBalance" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="IntSub">
+    <Key>
+      <PropertyRef Name="SubID" />
+    </Key>
+    <Property Name="SubID" Type="Int32" Nullable="false" />
+    <Property Name="BloodPressure" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BloodSugar" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Subscribtion" Relationship="ClubDBModel.FK_IntSub_IntSub" FromRole="IntSub" ToRole="Subscribtion" />
+  </EntityType>
+  <EntityType Name="InvoiceHeader">
+    <Key>
+      <PropertyRef Name="InvID" />
+    </Key>
+    <Property Name="InvID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="RecepName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="FinalAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Client" Relationship="ClubDBModel.FK_InvoiceHeader_Client" FromRole="InvoiceHeader" ToRole="Client" />
+    <NavigationProperty Name="Deposits" Relationship="ClubDBModel.FK_Deposit_InvoiceHeader" FromRole="InvoiceHeader" ToRole="Deposit" />
+    <NavigationProperty Name="InvoiceServices" Relationship="ClubDBModel.FK_InvoiceServices_InvoiceHeader" FromRole="InvoiceHeader" ToRole="InvoiceServices" />
+  </EntityType>
+  <EntityType Name="InvoiceService">
+    <Key>
+      <PropertyRef Name="InvID" />
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="InvID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceID" Type="Int32" Nullable="false" />
+    <Property Name="AskedAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PaidAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="InvoiceHeader" Relationship="ClubDBModel.FK_InvoiceServices_InvoiceHeader" FromRole="InvoiceServices" ToRole="InvoiceHeader" />
+    <NavigationProperty Name="Service" Relationship="ClubDBModel.FK_InvoiceServices_Service" FromRole="InvoiceServices" ToRole="Service" />
+    <Property Type="Decimal" Name="Percentage" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NutSub">
+    <Key>
+      <PropertyRef Name="SubID" />
+    </Key>
+    <Property Name="SubID" Type="Int32" Nullable="false" />
+    <Property Name="Fat" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Weight" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Hight" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Subscribtion" Relationship="ClubDBModel.FK_NutSub_Subscribtion" FromRole="NutSub" ToRole="Subscribtion" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DepID" Type="Int32" Nullable="false" />
+    <Property Name="Sub" Type="Boolean" Nullable="false" />
+    <Property Name="TotalDays" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="ClubDBModel.FK_Service_Service" FromRole="Service" ToRole="Department" />
+    <NavigationProperty Name="InvoiceServices" Relationship="ClubDBModel.FK_InvoiceServices_Service" FromRole="Service" ToRole="InvoiceServices" />
+    <NavigationProperty Name="Subscribtions" Relationship="ClubDBModel.FK_Subscribtion_Service" FromRole="Service" ToRole="Subscribtion" />
+  </EntityType>
+  <EntityType Name="Subscribtion">
+    <Key>
+      <PropertyRef Name="SubID" />
+    </Key>
+    <Property Name="SubID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceID" Type="Int32" Nullable="false" />
+    <Property Name="SubDays" Type="Int32" />
+    <Property Name="AttDays" Type="Int32" />
+    <Property Name="LeftDays" Type="Int32" />
+    <Property Name="Measurements" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Diagnosis" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Client" Relationship="ClubDBModel.FK_Subscribtion_Client" FromRole="Subscribtion" ToRole="Client" />
+    <NavigationProperty Name="IntSub" Relationship="ClubDBModel.FK_IntSub_IntSub" FromRole="Subscribtion" ToRole="IntSub" />
+    <NavigationProperty Name="NutSub" Relationship="ClubDBModel.FK_NutSub_Subscribtion" FromRole="Subscribtion" ToRole="NutSub" />
+    <NavigationProperty Name="Service" Relationship="ClubDBModel.FK_Subscribtion_Service" FromRole="Subscribtion" ToRole="Service" />
+    <NavigationProperty Name="Visits" Relationship="ClubDBModel.FK_Visit_Subscribtion" FromRole="Subscribtion" ToRole="Visit" />
+    <Property Type="String" Name="History" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TReaquest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="Diagnosis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Goals" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Precautions" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="ClubDBModel.FK_TReaquest_Client" FromRole="TReaquest" ToRole="Client" />
+    <NavigationProperty Name="Employee" Relationship="ClubDBModel.FK_TReaquest_Employee" FromRole="TReaquest" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Visit">
+    <Key>
+      <PropertyRef Name="VisitID" />
+    </Key>
+    <Property Name="VisitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="SubID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="SizeBefore" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SizeAfter" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SigninTime" Type="Time" />
+    <Property Name="Signouttime" Type="Time" />
+    <NavigationProperty Name="Client" Relationship="ClubDBModel.FK_Visit_Client" FromRole="Visit" ToRole="Client" />
+    <NavigationProperty Name="Subscribtion" Relationship="ClubDBModel.FK_Visit_Subscribtion" FromRole="Visit" ToRole="Subscribtion" />
+  </EntityType>
+  <EntityType Name="Withdraw">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpID" Type="Int32" Nullable="false" />
+    <Property Name="ToPerson" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="AmountW" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CheckNum" Type="Int64" />
+    <Property Name="WithType" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="ClubDBModel.FK_Withdraw_Employee" FromRole="Withdraw" ToRole="Employee" />
+    <NavigationProperty Name="WithType1" Relationship="ClubDBModel.FK_Withdraw_WithType" FromRole="Withdraw" ToRole="WithType" />
+    <Property Type="String" Name="BankName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="BankID" />
+    <NavigationProperty Name="BankTran" Relationship="ClubDBModel.FK_Withdraw_Employee1" FromRole="Withdraw" ToRole="BankTran" />
+  </EntityType>
+  <EntityType Name="WithType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Department" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Withdraws" Relationship="ClubDBModel.FK_Withdraw_WithType" FromRole="WithType" ToRole="Withdraw" />
+    <NavigationProperty Name="Department1" Relationship="ClubDBModel.FK_WithType_Department" FromRole="WithType" ToRole="Department" />
+  </EntityType>
+  <Association Name="FK_Discharge_Client">
+    <End Role="Client" Type="ClubDBModel.Client" Multiplicity="1" />
+    <End Role="Discharge" Type="ClubDBModel.Discharge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="Discharge">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Evaluation_Client">
+    <End Role="Client" Type="ClubDBModel.Client" Multiplicity="1" />
+    <End Role="Evaluation" Type="ClubDBModel.Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="Evaluation">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceHeader_Client">
+    <End Role="Client" Type="ClubDBModel.Client" Multiplicity="1" />
+    <End Role="InvoiceHeader" Type="ClubDBModel.InvoiceHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="InvoiceHeader">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscribtion_Client">
+    <End Role="Client" Type="ClubDBModel.Client" Multiplicity="1" />
+    <End Role="Subscribtion" Type="ClubDBModel.Subscribtion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="Subscribtion">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TReaquest_Client">
+    <End Role="Client" Type="ClubDBModel.Client" Multiplicity="1" />
+    <End Role="TReaquest" Type="ClubDBModel.TReaquest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="TReaquest">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visit_Client">
+    <End Role="Client" Type="ClubDBModel.Client" Multiplicity="1" />
+    <End Role="Visit" Type="ClubDBModel.Visit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="Visit">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Service_Service">
+    <End Role="Department" Type="ClubDBModel.Department" Multiplicity="1" />
+    <End Role="Service" Type="ClubDBModel.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepID" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="DepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Deposit_InvoiceHeader">
+    <End Role="InvoiceHeader" Type="ClubDBModel.InvoiceHeader" Multiplicity="1" />
+    <End Role="Deposit" Type="ClubDBModel.Deposit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InvoiceHeader">
+        <PropertyRef Name="InvID" />
+      </Principal>
+      <Dependent Role="Deposit">
+        <PropertyRef Name="InvID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Discharge_Employee">
+    <End Role="Employee" Type="ClubDBModel.Employee" Multiplicity="1" />
+    <End Role="Discharge" Type="ClubDBModel.Discharge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="Discharge">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Evaluation_Employee">
+    <End Role="Employee" Type="ClubDBModel.Employee" Multiplicity="1" />
+    <End Role="Evaluation" Type="ClubDBModel.Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="Evaluation">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TReaquest_Employee">
+    <End Role="Employee" Type="ClubDBModel.Employee" Multiplicity="1" />
+    <End Role="TReaquest" Type="ClubDBModel.TReaquest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="TReaquest">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Withdraw_Employee">
+    <End Role="Employee" Type="ClubDBModel.Employee" Multiplicity="1" />
+    <End Role="Withdraw" Type="ClubDBModel.Withdraw" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="Withdraw">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IntSub_IntSub">
+    <End Role="Subscribtion" Type="ClubDBModel.Subscribtion" Multiplicity="1" />
+    <End Role="IntSub" Type="ClubDBModel.IntSub" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Subscribtion">
+        <PropertyRef Name="SubID" />
+      </Principal>
+      <Dependent Role="IntSub">
+        <PropertyRef Name="SubID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceServices_InvoiceHeader">
+    <End Role="InvoiceHeader" Type="ClubDBModel.InvoiceHeader" Multiplicity="1" />
+    <End Role="InvoiceServices" Type="ClubDBModel.InvoiceService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InvoiceHeader">
+        <PropertyRef Name="InvID" />
+      </Principal>
+      <Dependent Role="InvoiceServices">
+        <PropertyRef Name="InvID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceServices_Service">
+    <End Role="Service" Type="ClubDBModel.Service" Multiplicity="1" />
+    <End Role="InvoiceServices" Type="ClubDBModel.InvoiceService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ServiceID" />
+      </Principal>
+      <Dependent Role="InvoiceServices">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NutSub_Subscribtion">
+    <End Role="Subscribtion" Type="ClubDBModel.Subscribtion" Multiplicity="1" />
+    <End Role="NutSub" Type="ClubDBModel.NutSub" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Subscribtion">
+        <PropertyRef Name="SubID" />
+      </Principal>
+      <Dependent Role="NutSub">
+        <PropertyRef Name="SubID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscribtion_Service">
+    <End Role="Service" Type="ClubDBModel.Service" Multiplicity="1" />
+    <End Role="Subscribtion" Type="ClubDBModel.Subscribtion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ServiceID" />
+      </Principal>
+      <Dependent Role="Subscribtion">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visit_Subscribtion">
+    <End Role="Subscribtion" Type="ClubDBModel.Subscribtion" Multiplicity="1" />
+    <End Role="Visit" Type="ClubDBModel.Visit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subscribtion">
+        <PropertyRef Name="SubID" />
+      </Principal>
+      <Dependent Role="Visit">
+        <PropertyRef Name="SubID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Withdraw_WithType">
+    <End Role="WithType" Type="ClubDBModel.WithType" Multiplicity="0..1" />
+    <End Role="Withdraw" Type="ClubDBModel.Withdraw" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WithType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Withdraw">
+        <PropertyRef Name="WithType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepDoc">
+    <End Role="Department" Type="ClubDBModel.Department" Multiplicity="*" />
+    <End Role="Employee" Type="ClubDBModel.Employee" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="Subs">
+    <Property Type="String" Name="ServiceName" Nullable="false" />
+    <Property Type="DateTime" Name="SubDate" Nullable="false" />
+    <Property Type="Int32" Name="DaysLeft" Nullable="true" />
+    <Property Type="Int32" Name="SubID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SubDetails">
+    <Property Type="String" Name="ServiceName" Nullable="false" />
+    <Property Type="DateTime" Name="SubDate" Nullable="false" />
+    <Property Type="Int32" Name="TotalDays" Nullable="true" />
+    <Property Type="Int32" Name="AttDays" Nullable="true" />
+    <Property Type="Int32" Name="LeftDays" Nullable="true" />
+    <Property Type="String" Name="Measurements" Nullable="true" />
+    <Property Type="String" Name="Diagnosis" Nullable="true" />
+    <Property Type="String" Name="BSugar" Nullable="true" />
+    <Property Type="String" Name="BPressure" Nullable="true" />
+    <Property Type="String" Name="Fat" Nullable="true" />
+    <Property Type="String" Name="Hieght" Nullable="true" />
+    <Property Type="String" Name="Weight" Nullable="true" />
+    <Property Type="String" Name="History" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="VisitReport">
+    <Property Type="String" Name="Name" Nullable="true" />
+    <Property Type="String" Name="FileID" Nullable="true" />
+    <Property Type="String" Name="DateOfSub" Nullable="true" />
+    <Property Type="String" Name="ServiceName" Nullable="true" />
+    <Property Type="String" Name="SigninTime" Nullable="true" />
+    <Property Type="String" Name="SizeBefore" Nullable="true" />
+    <Property Type="String" Name="SizeAfter" Nullable="true" />
+    <Property Type="String" Name="DateOfVisit" Nullable="true" />
+    <Property Type="String" Name="Ser" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="InvoiceReport">
+    <Property Type="String" Name="ClientName" Nullable="false" />
+    <Property Type="String" Name="FileID" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="Receptionist" Nullable="false" />
+    <Property Type="String" Name="TotalAmount" Nullable="false" />
+    <Property Type="String" Name="PaidAmount" Nullable="true" />
+    <Property Type="String" Name="RemainAmount" Nullable="true" />
+    <Property Type="String" Name="Discount" Nullable="false" />
+    <Property Type="String" Name="FinalAmount" Nullable="false" />
+    <Property Type="String" Name="InvoiceID" Nullable="false" />
+    <Property Type="String" Name="ServiceName" Nullable="false" />
+    <Property Type="String" Name="ServicePrice" Nullable="false" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="TodayVisits">
+    <Property Type="String" Name="ClientID" Nullable="false" />
+    <Property Type="String" Name="ClientName" Nullable="false" />
+    <Property Type="String" Name="Sub" Nullable="false" />
+    <Property Type="String" Name="Time" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WithdrawReport">
+    <Property Type="String" Name="ID" Nullable="false" />
+    <Property Type="String" Name="EmployeeName" Nullable="false" />
+    <Property Type="String" Name="ToPerson" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="Amount" Nullable="false" />
+    <Property Type="String" Name="AmountW" Nullable="true" />
+    <Property Type="String" Name="Bank" Nullable="true" />
+    <Property Type="String" Name="CheckNum" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="IncomeReport">
+    <Property Type="String" Name="Ser" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="Income" Nullable="false" />
+    <Property Type="String" Name="Day" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ExpenseReport">
+    <Property Type="String" Name="Ser" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="Day" Nullable="false" />
+    <Property Type="String" Name="InvNum" Nullable="false" />
+    <Property Type="String" Name="InvAmount" Nullable="false" />
+    <Property Type="String" Name="Note" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="MovReport">
+    <Property Type="String" Name="Ser" Nullable="false" />
+    <Property Type="String" Name="ClientName" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" />
+    <Property Type="String" Name="InvNum" Nullable="false" />
+    <Property Type="String" Name="Amount" Nullable="false" />
+    <Property Type="String" Name="Paid" Nullable="false" />
+    <Property Type="String" Name="Remain" Nullable="false" />
+    <Property Type="String" Name="PrePaid" Nullable="false" />
+    <Property Type="String" Name="Services" Nullable="false" />
+    <Property Type="String" Name="Notes" Nullable="false" />
+    <Property Type="String" Name="VoucherNum" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="IncompleteInv">
+    <Property Type="String" Name="InvID" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="FileID" Nullable="false" />
+    <Property Type="String" Name="ClientName" Nullable="false" />
+    <Property Type="String" Name="Amount" Nullable="false" />
+    <Property Type="String" Name="Remain" Nullable="false" />
+    <Property Type="String" Name="EmpName" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="BuffetReport">
+    <Property Type="String" Name="BPreBalance" Nullable="false" />
+    <Property Type="String" Name="BBalance" Nullable="false" />
+    <Property Type="String" Name="BPurchase" Nullable="false" />
+    <Property Type="String" Name="BSales" Nullable="false" />
+    <Property Type="String" Name="BMigBalance" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="CPreBalance" Nullable="false" />
+    <Property Type="String" Name="CInvIncome" Nullable="false" />
+    <Property Type="String" Name="CBuffetIncome" Nullable="false" />
+    <Property Type="String" Name="CBalance" Nullable="false" />
+    <Property Type="String" Name="CExpenses" Nullable="false" />
+    <Property Type="String" Name="CBank" Nullable="false" />
+    <Property Type="String" Name="CMigBalance" Nullable="false" />
+    <Property Type="String" Name="EPreBalance" Nullable="false" />
+    <Property Type="String" Name="EPlusBalance" Nullable="false" />
+    <Property Type="String" Name="EBalance" Nullable="false" />
+    <Property Type="String" Name="EExpenses" Nullable="false" />
+    <Property Type="String" Name="EMigBalance" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="TRequestReport">
+    <Property Type="String" Name="PatientName" Nullable="false" />
+    <Property Type="String" Name="FileID" Nullable="false" />
+    <Property Type="String" Name="DOB" Nullable="false" />
+    <Property Type="String" Name="Nation" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" />
+    <Property Type="String" Name="EmpName" Nullable="false" />
+    <Property Type="String" Name="Diagnosis" Nullable="false" />
+    <Property Type="String" Name="Goals" Nullable="false" />
+    <Property Type="String" Name="Precaution" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="EvaluationReport">
+    <Property Type="String" Name="PatientName" Nullable="false" />
+    <Property Type="String" Name="FileID" Nullable="false" />
+    <Property Type="String" Name="DOB" Nullable="false" />
+    <Property Type="String" Name="Nation" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" />
+    <Property Type="String" Name="EmpName" Nullable="false" />
+    <Property Type="String" Name="Diagnosis" Nullable="false" />
+    <Property Type="String" Name="History" Nullable="false" />
+    <Property Type="String" Name="Objective" Nullable="false" />
+    <Property Type="String" Name="Assessment" Nullable="false" />
+    <Property Type="String" Name="Goals" Nullable="false" />
+    <Property Type="String" Name="Treatment" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="DischargeReport">
+    <Property Type="String" Name="PatientName" Nullable="false" />
+    <Property Type="String" Name="FileID" Nullable="false" />
+    <Property Type="String" Name="DOB" Nullable="false" />
+    <Property Type="String" Name="Nation" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" />
+    <Property Type="String" Name="EmpName" Nullable="false" />
+    <Property Type="String" Name="Diagnosis" Nullable="false" />
+    <Property Type="String" Name="Discharge" Nullable="false" />
+    <Property Type="String" Name="Comments" Nullable="false" />
+    <Property Type="String" Name="PreReferral" Nullable="false" />
+    <Property Type="String" Name="Goals" Nullable="false" />
+    <Property Type="String" Name="Treatment" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="DateTime" Name="InitialSession" Nullable="false" />
+    <Property Type="DateTime" Name="FinalSession" Nullable="false" />
+    <Property Type="String" Name="GoalsBool" Nullable="false" />
+    <Property Type="String" Name="TotalSessions" Nullable="false" />
+    <Property Type="String" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="EmpReport">
+    <Property Type="String" Name="Name" Nullable="false" />
+    <Property Type="String" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" />
+    <Property Type="String" Name="Dep" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ServiceReport">
+    <Property Type="String" Name="Name" Nullable="false" />
+    <Property Type="String" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Price" Nullable="false" />
+    <Property Type="String" Name="Dep" Nullable="false" />
+    <Property Type="String" Name="SubDays" Nullable="false" />
+    <Property Type="String" Name="SubType" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="EandIReport">
+    <Property Type="String" Name="Income" Nullable="false" />
+    <Property Type="String" Name="Expenses" Nullable="false" />
+    <Property Type="String" Name="Month" Nullable="false" />
+    <Property Type="String" Name="Year" Nullable="false" />
+    <Property Type="String" Name="ExpenseAmount" Nullable="false" />
+    <Property Type="String" Name="Dep" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WithTypeReport">
+    <Property Type="String" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" />
+    <Property Type="String" Name="Department" Nullable="false" />
+  </ComplexType>
+  <Association Name="FK_WithType_Department">
+    <End Type="ClubDBModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="ClubDBModel.WithType" Role="WithType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepID" />
+      </Principal>
+      <Dependent Role="WithType">
+        <PropertyRef Name="Department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SubsOfTheDay">
+    <Property Type="String" Name="FileID" Nullable="false" />
+    <Property Type="String" Name="ClientName" Nullable="false" />
+    <Property Type="String" Name="Services" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="JointReport">
+    <Property Type="String" Name="Ser" Nullable="false" />
+    <Property Type="String" Name="ClientName" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" />
+    <Property Type="String" Name="InvNum" Nullable="false" />
+    <Property Type="String" Name="Amount" Nullable="false" />
+    <Property Type="String" Name="Paid" Nullable="false" />
+    <Property Type="String" Name="Remain" Nullable="false" />
+    <Property Type="String" Name="PrePaid" Nullable="false" />
+    <Property Type="String" Name="Services" Nullable="false" />
+    <Property Type="String" Name="Notes" Nullable="false" />
+    <Property Type="String" Name="VoucherNum" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="CBalance" Nullable="false" />
+    <Property Type="String" Name="CBank" Nullable="false" />
+    <Property Type="String" Name="CExpenses" Nullable="false" />
+    <Property Type="String" Name="CMigBalance" Nullable="false" />
+    <Property Type="String" Name="CInvIncome" Nullable="false" />
+    <Property Type="String" Name="CPreBalance" Nullable="false" />
+    <Property Type="String" Name="FileID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="BankTran">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Note" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Withdraws" Relationship="ClubDBModel.FK_Withdraw_Employee1" FromRole="BankTran" ToRole="Withdraw" />
+  </EntityType>
+  <Association Name="FK_Withdraw_Employee1">
+    <End Type="ClubDBModel.BankTran" Role="BankTran" Multiplicity="0..1" />
+    <End Type="ClubDBModel.Withdraw" Role="Withdraw" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BankTran">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Withdraw">
+        <PropertyRef Name="BankID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="TransReport">
+    <Property Type="String" Name="Date" Nullable="false" />
+    <Property Type="String" Name="Day" Nullable="false" />
+    <Property Type="String" Name="Type" Nullable="false" />
+    <Property Type="String" Name="Income" Nullable="false" />
+    <Property Type="String" Name="Expense" Nullable="false" />
+  </ComplexType>
+</Schema>

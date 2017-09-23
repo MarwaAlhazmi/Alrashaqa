@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ApplicationServices-Web.config Connection String" description="ApplicationServices Connection String used in web.config by the application to access the database." defaultvalue="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnetdb.mdf;User Instance=true" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\windows7\\Documents\\Visual\ Studio\ 2010\\Projects\\final\\ClubWebApp\\ClubWebApp\\ClubWebApp\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ApplicationServices']/@connectionString" />
+  </parameter>
+  <parameter name="ClubDBEntities-Web.config Connection String" description="ClubDBEntities Connection String used in web.config by the application to access the database." defaultvalue="metadata=res://*/Protected.ClubDBEnities.csdl|res://*/Protected.ClubDBEnities.ssdl|res://*/Protected.ClubDBEnities.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLEXPRESS;attachdbfilename=|DataDirectory|\ClubDB.mdf;integrated security=True;user instance=True;multipleactiveresultsets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\windows7\\Documents\\Visual\ Studio\ 2010\\Projects\\final\\ClubWebApp\\ClubWebApp\\ClubWebApp\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ClubDBEntities']/@connectionString" />
+  </parameter>
+</parameters>

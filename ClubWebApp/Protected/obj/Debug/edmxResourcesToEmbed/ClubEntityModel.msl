@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClubDBModelStoreContainer" CdmEntityContainer="ClubDBEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="ClubDBModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Marital" ColumnName="Marital" />
+          <ScalarProperty Name="RefferedFrom" ColumnName="RefferedFrom" />
+          <ScalarProperty Name="RefferedDate" ColumnName="RefferedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="ClubDBModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepID" ColumnName="DepID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="ClubDBModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IntSubs">
+      <EntityTypeMapping TypeName="ClubDBModel.IntSub">
+        <MappingFragment StoreEntitySet="IntSub">
+          <ScalarProperty Name="SubID" ColumnName="SubID" />
+          <ScalarProperty Name="BloodPressure" ColumnName="BloodPressure" />
+          <ScalarProperty Name="BloodSugar" ColumnName="BloodSugar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceHeaders">
+      <EntityTypeMapping TypeName="ClubDBModel.InvoiceHeader">
+        <MappingFragment StoreEntitySet="InvoiceHeader">
+          <ScalarProperty Name="Dep" ColumnName="Dep" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="RecepName" ColumnName="RecepName" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NutSubs">
+      <EntityTypeMapping TypeName="ClubDBModel.NutSub">
+        <MappingFragment StoreEntitySet="NutSub">
+          <ScalarProperty Name="SubID" ColumnName="SubID" />
+          <ScalarProperty Name="Fat" ColumnName="Fat" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Hight" ColumnName="Hight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="ClubDBModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="TotalDays" ColumnName="TotalDays" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="DepID" ColumnName="DepID" />
+          <ScalarProperty Name="Sub" ColumnName="Sub" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscribtions">
+      <EntityTypeMapping TypeName="ClubDBModel.Subscribtion">
+        <MappingFragment StoreEntitySet="Subscribtion">
+          <ScalarProperty Name="SubID" ColumnName="SubID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="SubDays" ColumnName="SubDays" />
+          <ScalarProperty Name="AttDays" ColumnName="AttDays" />
+          <ScalarProperty Name="LeftDays" ColumnName="LeftDays" />
+          <ScalarProperty Name="Measurements" ColumnName="Measurements" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visits">
+      <EntityTypeMapping TypeName="ClubDBModel.Visit">
+        <MappingFragment StoreEntitySet="Visit">
+          <ScalarProperty Name="VisitID" ColumnName="VisitID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="SubID" ColumnName="SubID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SizeBefore" ColumnName="SizeBefore" />
+          <ScalarProperty Name="SizeAfter" ColumnName="SizeAfter" />
+          <ScalarProperty Name="SigninTime" ColumnName="SigninTime" />
+          <ScalarProperty Name="Signouttime" ColumnName="Signouttime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Withdraws">
+      <EntityTypeMapping TypeName="ClubDBModel.Withdraw">
+        <MappingFragment StoreEntitySet="Withdraw">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ToPerson" ColumnName="ToPerson" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="AmountW" ColumnName="AmountW" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="CheckNum" ColumnName="CheckNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DepDoc" TypeName="ClubDBModel.DepDoc" StoreEntitySet="DepDoc">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="DepID" ColumnName="DepID" />
+      </EndProperty>
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="EmpID" ColumnName="DocID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="InvoiceServices" TypeName="ClubDBModel.InvoiceServices" StoreEntitySet="InvoiceServices">
+      <EndProperty Name="InvoiceHeader">
+        <ScalarProperty Name="InvID" ColumnName="InvID" />
+      </EndProperty>
+      <EndProperty Name="Service">
+        <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Deposits">
+      <EntityTypeMapping TypeName="ClubDBModel.Deposit">
+        <MappingFragment StoreEntitySet="Deposit">
+          <ScalarProperty Name="FromPerson" ColumnName="FromPerson" />
+          <ScalarProperty Name="AmountW" ColumnName="AmountW" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="CheckNum" ColumnName="CheckNum" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuffetMovs">
+      <EntityTypeMapping TypeName="ClubDBModel.BuffetMov">
+        <MappingFragment StoreEntitySet="BuffetMov">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="MigBalance" ColumnName="MigBalance" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+          <ScalarProperty Name="Purchase" ColumnName="Purchase" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="PreBalance" ColumnName="PreBalance" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CashMovs">
+      <EntityTypeMapping TypeName="ClubDBModel.CashMov">
+        <MappingFragment StoreEntitySet="CashMov">
+          <ScalarProperty Name="MigBalance" ColumnName="MigBalance" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="Expenses" ColumnName="Expenses" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="BuffetIncome" ColumnName="BuffetIncome" />
+          <ScalarProperty Name="InvIncome" ColumnName="InvIncome" />
+          <ScalarProperty Name="PreBalance" ColumnName="PreBalance" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpensesMovs">
+      <EntityTypeMapping TypeName="ClubDBModel.ExpensesMov">
+        <MappingFragment StoreEntitySet="ExpensesMov">
+          <ScalarProperty Name="MigBalance" ColumnName="MigBalance" />
+          <ScalarProperty Name="Expenses" ColumnName="Expenses" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="PlusBalance" ColumnName="PlusBalance" />
+          <ScalarProperty Name="PreBalance" ColumnName="PreBalance" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discharges">
+      <EntityTypeMapping TypeName="ClubDBModel.Discharge">
+        <MappingFragment StoreEntitySet="Discharge">
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="GoalsBool" ColumnName="GoalsBool" />
+          <ScalarProperty Name="Goals" ColumnName="Goals" />
+          <ScalarProperty Name="Discharge1" ColumnName="Discharge" />
+          <ScalarProperty Name="Treatment" ColumnName="Treatment" />
+          <ScalarProperty Name="TotalNSession" ColumnName="TotalNSession" />
+          <ScalarProperty Name="FinalSession" ColumnName="FinalSession" />
+          <ScalarProperty Name="InitialSession" ColumnName="InitialSession" />
+          <ScalarProperty Name="PreReferral" ColumnName="PreReferral" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evaluations">
+      <EntityTypeMapping TypeName="ClubDBModel.Evaluation">
+        <MappingFragment StoreEntitySet="Evaluation">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Treatment" ColumnName="Treatment" />
+          <ScalarProperty Name="Goals" ColumnName="Goals" />
+          <ScalarProperty Name="Assessment" ColumnName="Assessment" />
+          <ScalarProperty Name="Objective" ColumnName="Objective" />
+          <ScalarProperty Name="History" ColumnName="History" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TReaquests">
+      <EntityTypeMapping TypeName="ClubDBModel.TReaquest">
+        <MappingFragment StoreEntitySet="TReaquest">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Precautions" ColumnName="Precautions" />
+          <ScalarProperty Name="Goals" ColumnName="Goals" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9869689E-BE15-4E13-99CD-A2F548B9EC53}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClubWebApp</RootNamespace>
+    <AssemblyName>ClubWebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ApplicationServices-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=|DataDirectory|\aspnetdb.mdf%3bIntegrated Security=True%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\ApplicationServices-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="ClubDBEntities-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=|DataDirectory|\ClubDB.mdf%3bIntegrated Security=True%3bConnect Timeout=30%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\ClubDBEntities-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.4.1.50927\lib\40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AntiXSSLibrary">
+      <HintPath>..\packages\AjaxControlToolkit.4.1.50927\lib\40\SanitizerProviders\AntiXSSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary">
+      <HintPath>..\packages\AjaxControlToolkit.4.1.50927\lib\40\SanitizerProviders\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SanitizerProviders">
+      <HintPath>..\packages\AjaxControlToolkit.4.1.50927\lib\40\SanitizerProviders\SanitizerProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Login.aspx" />
+    <Content Include="Protected\About.aspx" />
+    <Content Include="Protected\Account\ChangePass.aspx" />
+    <Content Include="Protected\Account\ChangePassword.aspx" />
+    <Content Include="Protected\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Protected\Account\ChangeRole.aspx" />
+    <Content Include="Protected\Account\Login.aspx" />
+    <Content Include="Protected\Account\Register.aspx" />
+    <Content Include="Protected\Add.aspx" />
+    <Content Include="Protected\AddSub.aspx" />
+    <Content Include="App_Data\ClubDB.mdf" />
+    <Content Include="App_Data\ClubDB_log.ldf">
+      <DependentUpon>ClubDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Protected\BalanceMov.aspx" />
+    <Content Include="Protected\BrowseInvoice.aspx" />
+    <Content Include="Protected\BrowseWith.aspx" />
+    <Content Include="Protected\Account\Control.aspx" />
+    <Content Include="Protected\Edit.aspx" />
+    <Content Include="Protected\PhysicalRequestBrowse.aspx" />
+    <Content Include="Protected\DietSystem.aspx" />
+    <Content Include="Protected\DischargeForm.aspx" />
+    <Content Include="Protected\PhysicalRequest.aspx" />
+    <Content Include="Protected\EvaluationSheet.aspx" />
+    <Content Include="Protected\Movement.aspx" />
+    <Content Include="Protected\InvoiceOrder.aspx" />
+    <Content Include="Protected\Deposit.aspx" />
+    <Content Include="Protected\DeptInvoices.aspx" />
+    <Content Include="Protected\Expenses.aspx" />
+    <Content Include="Protected\CurrentMembers.aspx" />
+    <Content Include="Protected\Error.aspx" />
+    <Content Include="Protected\Income.aspx" />
+    <Content Include="Protected\IncompleteInvoice.aspx" />
+    <Content Include="Protected\Invoice.aspx" />
+    <Content Include="Protected\InvoiceSerach.aspx" />
+    <Content Include="Protected\NewMember.aspx" />
+    <Content Include="Protected\Search.aspx" />
+    <Content Include="Protected\ShowInvoice.aspx" />
+    <Content Include="Protected\Styles\img\ajax-loader%284%29.gif" />
+    <Content Include="Protected\Styles\img\application.png" />
+    <Content Include="Protected\Styles\img\arrow.png" />
+    <Content Include="Protected\Styles\img\button2.png" />
+    <Content Include="Protected\Styles\img\chart.png" />
+    <Content Include="Protected\Styles\img\competition.jpg" />
+    <Content Include="Protected\Styles\img\computer_monitor.png" />
+    <Content Include="Protected\Styles\img\create_new_folder.png" />
+    <Content Include="Protected\Styles\img\create_new_page.png" />
+    <Content Include="Protected\Styles\img\customer.jpg" />
+    <Content Include="Protected\Styles\img\Fitness.jpg" />
+    <Content Include="Protected\Styles\img\FitnessClub.gif" />
+    <Content Include="Protected\Styles\img\man.jpg" />
+    <Content Include="Protected\Styles\img\padlock_locked.png" />
+    <Content Include="Protected\Styles\img\pink_top.jpg" />
+    <Content Include="Protected\Styles\img\questions.jpg" />
+    <Content Include="Protected\Styles\img\top.jpg" />
+    <Content Include="Protected\Styles\img\up.jpg" />
+    <Content Include="Protected\Styles\img\view_page.png" />
+    <Content Include="Protected\Styles\img\winner.jpg" />
+    <Content Include="Protected\Styles\img\zoom_search.png" />
+    <Content Include="Protected\Styles\Site.css" />
+    <Content Include="Styles\img\ajax-loader%284%29.gif" />
+    <Content Include="Styles\img\application.png" />
+    <Content Include="Styles\img\arrow.png" />
+    <Content Include="Styles\img\button2.png" />
+    <Content Include="Styles\img\chart.png" />
+    <Content Include="Styles\img\competition.jpg" />
+    <Content Include="Styles\img\computer_monitor.png" />
+    <Content Include="Styles\img\create_new_folder.png" />
+    <Content Include="Styles\img\create_new_page.png" />
+    <Content Include="Styles\img\customer.jpg" />
+    <Content Include="Styles\img\Fitness.jpg" />
+    <Content Include="Styles\img\FitnessClub.gif" />
+    <Content Include="Styles\img\man.jpg" />
+    <Content Include="Styles\img\padlock_locked.png" />
+    <Content Include="Styles\img\pink_top.jpg" />
+    <Content Include="Styles\img\questions.jpg" />
+    <Content Include="Styles\img\top.jpg" />
+    <Content Include="Styles\img\up.jpg" />
+    <Content Include="Styles\img\view_page.png" />
+    <Content Include="Styles\img\winner.jpg" />
+    <Content Include="Styles\img\zoom_search.png" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Protected\Default.aspx" />
+    <Content Include="Protected\Global.asax" />
+    <Content Include="Protected\Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Protected\Scripts\jquery-1.4.1.js" />
+    <Content Include="Protected\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Protected\Visit.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Protected\WebForm1.aspx" />
+    <Content Include="Protected\Withdraw.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Account\ChangePass.aspx.cs">
+      <DependentUpon>ChangePass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Account\ChangePass.aspx.designer.cs">
+      <DependentUpon>ChangePass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Account\ChangeRole.aspx.cs">
+      <DependentUpon>ChangeRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Account\ChangeRole.aspx.designer.cs">
+      <DependentUpon>ChangeRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\AddSub.aspx.cs">
+      <DependentUpon>AddSub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\AddSub.aspx.designer.cs">
+      <DependentUpon>AddSub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\BalanceMov.aspx.cs">
+      <DependentUpon>BalanceMov.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\BalanceMov.aspx.designer.cs">
+      <DependentUpon>BalanceMov.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\BrowseInvoice.aspx.cs">
+      <DependentUpon>BrowseInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\BrowseInvoice.aspx.designer.cs">
+      <DependentUpon>BrowseInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\BrowseWith.aspx.cs">
+      <DependentUpon>BrowseWith.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\BrowseWith.aspx.designer.cs">
+      <DependentUpon>BrowseWith.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\BuffetMovCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuffetMovCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Protected\ClubDBEntities.cs" />
+    <Compile Include="Protected\ClubEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClubEntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Code\ClubClass.cs" />
+    <Compile Include="Protected\Account\Control.aspx.cs">
+      <DependentUpon>Control.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Account\Control.aspx.designer.cs">
+      <DependentUpon>Control.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\PhysicalRequestBrowse.aspx.cs">
+      <DependentUpon>PhysicalRequestBrowse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\PhysicalRequestBrowse.aspx.designer.cs">
+      <DependentUpon>PhysicalRequestBrowse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\DietSystem.aspx.cs">
+      <DependentUpon>DietSystem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\DietSystem.aspx.designer.cs">
+      <DependentUpon>DietSystem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\DischargeCR.cs">
+      <DependentUpon>DischargeCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Protected\DischargeForm.aspx.cs">
+      <DependentUpon>DischargeForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\DischargeForm.aspx.designer.cs">
+      <DependentUpon>DischargeForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\TRequestCR.cs">
+      <DependentUpon>TRequestCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Protected\PhysicalRequest.aspx.cs">
+      <DependentUpon>PhysicalRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\PhysicalRequest.aspx.designer.cs">
+      <DependentUpon>PhysicalRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\EvaluationCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvaluationCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Protected\EvaluationSheet.aspx.cs">
+      <DependentUpon>EvaluationSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\EvaluationSheet.aspx.designer.cs">
+      <DependentUpon>EvaluationSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\MovCR.cs">
+      <DependentUpon>MovCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Protected\Movement.aspx.cs">
+      <DependentUpon>Movement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Movement.aspx.designer.cs">
+      <DependentUpon>Movement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\InvoiceOrder.aspx.cs">
+      <DependentUpon>InvoiceOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\InvoiceOrder.aspx.designer.cs">
+      <DependentUpon>InvoiceOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Deposit.aspx.cs">
+      <DependentUpon>Deposit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Deposit.aspx.designer.cs">
+      <DependentUpon>Deposit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\DepositCR.cs">
+      <DependentUpon>DepositCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Protected\DeptInvoices.aspx.cs">
+      <DependentUpon>DeptInvoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\DeptInvoices.aspx.designer.cs">
+      <DependentUpon>DeptInvoices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Expenses.aspx.cs">
+      <DependentUpon>Expenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Expenses.aspx.designer.cs">
+      <DependentUpon>Expenses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\ExpenseCR.cs">
+      <DependentUpon>ExpenseCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Protected\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Protected\CurrentMembers.aspx.cs">
+      <DependentUpon>CurrentMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\CurrentMembers.aspx.designer.cs">
+      <DependentUpon>CurrentMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Income.aspx.cs">
+      <DependentUpon>Income.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Income.aspx.designer.cs">
+      <DependentUpon>Income.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\IncomeCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IncomeCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Protected\IncompleteInvoice.aspx.cs">
+      <DependentUpon>IncompleteInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\IncompleteInvoice.aspx.designer.cs">
+      <DependentUpon>IncompleteInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\InvoiceCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Protected\InvoiceSerach.aspx.cs">
+      <DependentUpon>InvoiceSerach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\InvoiceSerach.aspx.designer.cs">
+      <DependentUpon>InvoiceSerach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\NewMember.aspx.cs">
+      <DependentUpon>NewMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\NewMember.aspx.designer.cs">
+      <DependentUpon>NewMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\ShowInvoice.aspx.cs">
+      <DependentUpon>ShowInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\ShowInvoice.aspx.designer.cs">
+      <DependentUpon>ShowInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\test.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Protected\Visit.aspx.cs">
+      <DependentUpon>Visit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Visit.aspx.designer.cs">
+      <DependentUpon>Visit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\VisitCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisitCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Protected\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\Withdraw.aspx.cs">
+      <DependentUpon>Withdraw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protected\Withdraw.aspx.designer.cs">
+      <DependentUpon>Withdraw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protected\WithdrawCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WithdrawCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Protected\ClubEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClubEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Protected\Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Protected\packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Protected\Diet\%3b,%3bd.docx" />
+    <None Include="Protected\Diet\11111.doc" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Protected\BuffetMovCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuffetMovCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\DischargeCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DischargeCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\TRequestCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TRequestCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\EvaluationCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EvaluationCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\MovCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MovCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\DepositCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DepositCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\ExpenseCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExpenseCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\IncomeCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IncomeCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\InvoiceCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\test.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>test.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\VisitCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VisitCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protected\WithdrawCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WithdrawCR.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58480</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

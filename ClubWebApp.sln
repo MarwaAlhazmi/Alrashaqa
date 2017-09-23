@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubWebApp", "ClubWebApp\ClubWebApp.csproj", "{9869689E-BE15-4E13-99CD-A2F548B9EC53}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ClubWebAppSetup", "ClubWebAppSetup\ClubWebAppSetup.vdproj", "{12595D25-2BE0-4F2D-85E7-319B7C20FBFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9869689E-BE15-4E13-99CD-A2F548B9EC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9869689E-BE15-4E13-99CD-A2F548B9EC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9869689E-BE15-4E13-99CD-A2F548B9EC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9869689E-BE15-4E13-99CD-A2F548B9EC53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12595D25-2BE0-4F2D-85E7-319B7C20FBFA}.Debug|Any CPU.ActiveCfg = Debug
+		{12595D25-2BE0-4F2D-85E7-319B7C20FBFA}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
